@@ -1,0 +1,71 @@
+@import "variables";
+@import "mixins";
+
+.suggestionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-darker;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .quantity {
+    display: flex;
+    gap: 20px;
+  }
+
+  .sort {
+    .sortLabel {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-light;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 100;
+      &:hover {
+        opacity: 0.75;
+      }
+
+      img {
+        transform: rotate(180deg);
+        margin-left: 5px;
+      }
+    }
+
+    .sortDropdown {
+      position: absolute;
+      top: 96px;
+      width: 255px;
+      display: none;
+      z-index: 10;
+    }
+
+    .blank {
+      height: 120px;
+      width: 255px;
+      position: absolute;
+      top: 0;
+      display: none;
+    }
+
+    &:hover {
+      .sortDropdown {
+        display: block;
+      }
+      .blank {
+        display: block;
+      }
+      .sortLabel img {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

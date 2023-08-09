@@ -1,0 +1,23 @@
+@import "mixins";
+
+.home {
+  display: flex;
+  gap: 24px;
+  padding: 50px 20px;
+  @include tablet {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+  @include mobile {
+    padding: 0;
+  }
+  aside {
+    width: 255px;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  main {
+    flex: 1;
+  }
+}

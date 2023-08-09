@@ -1,0 +1,101 @@
+@import "variables";
+@import "mixins";
+
+.sidebar {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .title {
+    background: url(../assets/suggestions/desktop/background-header.png);
+    background-size: cover;
+    height: 137px;
+    padding: 24px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: $color-white;
+
+    @include tablet {
+      flex: 1;
+      background: url(../assets/suggestions/tablet/background-header.png);
+      background-size: cover;
+      height: auto;
+    }
+    h2 {
+      color: $color-white;
+    }
+    p {
+      opacity: 0.75;
+    }
+  }
+
+  .filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: $color-white;
+    padding: 24px;
+    border-radius: 15px;
+
+    @include tablet {
+      flex: 1;
+      align-items: flex-start;
+    }
+  }
+
+  .roadmap {
+    background-color: $color-white;
+    padding: 24px;
+    border-radius: 15px;
+
+    @include tablet {
+      flex: 1;
+    }
+
+    .roadmap__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 20px;
+
+      p {
+        color: $color-blue;
+        text-decoration: underline;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          color: #8397f8;
+        }
+      }
+    }
+
+    .roadmap__item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+
+      .roadmap__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        div {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+      }
+
+      .roadmap__quantity {
+        font-weight: 700;
+      }
+    }
+  }
+}
